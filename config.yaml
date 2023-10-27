@@ -25,9 +25,9 @@ monitors:
     linkable: true # allows the title to be a link, default=true
 
   - id: jellyfin-external
-    name: 'jellyfin.prashansa.com.np:8443'
+    name: "jellyfin.prashansa.com.np:8443"
     description: 'JellyFin External'
-    url: 'https://jellyfin.prashansa.com.np:8443/'
+    url: "https://jellyfin.prashansa.com.np:8443/"
     method: GET
     expectStatus: 200
     followRedirect: true
