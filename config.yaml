@@ -27,7 +27,7 @@ monitors:
   - id: jellyfin-external
     name: 'jellyfin.prashansa.com.np:8443'
     description: 'JellyFin External'
-    url: 'https://jellyfin.prashansa.com.np:8443/web/index.html#!/home.html'
+    url: 'https://jellyfin.prashansa.com.np:8443/web/index.html#'
     method: GET
     expectStatus: 200
     followRedirect: true
