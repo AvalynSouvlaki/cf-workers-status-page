@@ -1,39 +1,42 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
-  logo: logo-192x192.png # image in ./public/ folder
+  title: 'HealthCheck Status'
+  url: 'https://status.prashansa.com.np' # used for Slack messages
+  logo: uptime_measure.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
+  allmonitorsOperational: 'All Systems Online || Reachable'
+  notAllmonitorsOperational: 'Not All Systems Operational || Reachable'
+  monitorLabelOperational: 'Operational || Online'
+  monitorLabelNotOperational: 'Not Operational || Unreachable'
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
   dayInHistogramOperational: 'All good'
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: prashansa.com.np # unique identifier
+    name: prashansa.com.np
+    description: 'Main SecLog (Blog) Hosted on HashNode' # default=empty
+    url: 'https://prashansa.com.np/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: jellyfin-external
+    name: 'jellyfin.prashansa.com.np:8443'
+    description: 'JellyFin External'
+    url: 'https://jellyfin.prashansa.com.np:8443/web/index.html#!/home.html'
     method: GET
     expectStatus: 200
+    followRedirect: true
+    linkable: true
+
+  # - id: jellyfin-internal
+  #   name: 'jellyfin-zt.prashansa.com.np:8443'
+  #   description: 'JellyFin Zerotier Internal'
+  #   url: 'https://jellyfin-zt.prashansa.com.np:8443/web/index.html#!/home.html'
+  #   method: GET
+  #   expectStatus: 200
+  #   linkable: true
