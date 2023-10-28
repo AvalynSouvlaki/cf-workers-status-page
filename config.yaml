@@ -24,6 +24,15 @@ monitors:
     followRedirect: false # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
 
+  - id: drive.prashansa.com.np # unique identifier
+    name: "drive.prashansa.com.np:2096"
+    description: 'Storage Server (rClone + HFS)' # default=empty
+    url: 'https://drive.prashansa.com.np:2096/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+    
   - id: jellyfin-external
     name: "jellyfin.prashansa.com.np:8443"
     description: 'JellyFin External'
